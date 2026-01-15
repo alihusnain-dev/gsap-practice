@@ -1,5 +1,4 @@
 import { useGSAP } from '@gsap/react'
-import React from 'react'
 
 const Stagger = () => {
     useGSAP(() => {
@@ -11,7 +10,15 @@ const Stagger = () => {
             rotate: 360,
             ease: "power1.out",
             borderRadius: "50%",
-            stagger: 0.5,
+            stagger: {
+                amount: 0.5,
+                grid: [
+                    3, 2
+                ],
+                ease: "power1.out",
+                from: "center",
+                axis: "y",
+            }
         });
     })
     return (
